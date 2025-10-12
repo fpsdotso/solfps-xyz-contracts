@@ -1215,6 +1215,7 @@ name = "join_game"
 version = "0.2.6"
 dependencies = [
  "bolt-lang",
+ "position",
  "serde",
 ]
 
@@ -1701,6 +1702,7 @@ name = "respawn"
 version = "0.2.6"
 dependencies = [
  "bolt-lang",
+ "position",
  "serde",
 ]
 
@@ -2000,6 +2002,7 @@ name = "switch_weapon"
 version = "0.2.6"
 dependencies = [
  "bolt-lang",
+ "position",
  "serde",
 ]
 

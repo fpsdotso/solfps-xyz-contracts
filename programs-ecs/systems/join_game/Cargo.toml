@@ -22,4 +22,5 @@ custom-panic = []
 
 [dependencies]
 bolt-lang.workspace = true
+position = { version = "0.2.6", path = "../../components/position" }
 serde = { version = "1.0", features = ["derive"] }
