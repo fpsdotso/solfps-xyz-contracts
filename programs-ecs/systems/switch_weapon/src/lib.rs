@@ -1,5 +1,5 @@
 use bolt_lang::*;
-use position::Position;
+use weapon::Weapon;
 
 declare_id!("FpY75Ly4uRawJUfmyKcLps9Z1Kytz6BvypwMyyHJWh6d");
 
@@ -7,15 +7,13 @@ declare_id!("FpY75Ly4uRawJUfmyKcLps9Z1Kytz6BvypwMyyHJWh6d");
 pub mod switch_weapon {
 
     pub fn execute(ctx: Context<Components>, _args_p: Vec<u8>) -> Result<Components> {
-        let position = &mut ctx.accounts.position;
-        position.x += 1;
-        position.y += 1;
+        let weapon = &mut ctx.accounts.weapon;
         Ok(ctx.accounts)
     }
 
     #[system_input]
     pub struct Components {
-        pub position: Position,
+        pub weapon: Weapon,
     }
 
 }

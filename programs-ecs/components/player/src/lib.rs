@@ -7,7 +7,7 @@ pub struct Player {
     pub authority: Pubkey,          
     #[max_len(32)]
     pub username: String,            
-    pub is_logged_in: bool,          
+    pub has_logged_in: bool,          
     pub team: u8,                    // 0 = no team, 1 = Team A, 2 = Team B
     pub lobby_id: Option<Pubkey>,
     pub match_id: Option<Pubkey>,    
@@ -22,7 +22,7 @@ impl Default for Player {
         Self::new(PlayerInit{
             authority: Pubkey::default(),
             username: "Player".to_string(),
-            is_logged_in: false,
+            has_logged_in: false,
             team: 0,
             lobby_id: None,
             match_id: None,

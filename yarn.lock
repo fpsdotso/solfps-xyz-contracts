@@ -40,7 +40,7 @@
     buffer-layout "^1.2.0"
 
 "@magicblock-labs/bolt-sdk@latest":
-  version "0.2.6"
+  version "0.1.10"
   resolved "https://registry.yarnpkg.com/@magicblock-labs/bolt-sdk/-/bolt-sdk-0.2.6.tgz#341c29dc25a627d30221982a91cd06bdfc7aa07e"
   integrity sha512-rLQ0vU93QGhj3eKZjMw+y7M2O6RNRyeiN+vOz23QD1UhBh4xgb3V7kCGAIoZnzgSmoHo2w1b3EfSbI0LwKBoqQ==
   dependencies:

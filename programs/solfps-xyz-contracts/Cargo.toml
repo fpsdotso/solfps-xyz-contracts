@@ -1,6 +1,6 @@
 [package]
 name = "solfps-xyz-contracts"
-version = "0.2.6"
+version = "0.1.10"
 description = "Created with Bolt"
 edition = "2021"
 

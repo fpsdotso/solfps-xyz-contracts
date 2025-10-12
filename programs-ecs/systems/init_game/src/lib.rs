@@ -11,7 +11,7 @@ pub mod init_game {
         let player = &ctx.accounts.player;
         let clock = Clock::get()?;
         
-        require!(player.is_logged_in, InitGameError::PlayerNotRegistered);
+        require!(player.has_logged_in, InitGameError::PlayerNotRegistered);
         require!(player.lobby_id.is_none(), InitGameError::PlayerAlreadyInLobby);
         require!(player.match_id.is_none(), InitGameError::PlayerInMatch);
         

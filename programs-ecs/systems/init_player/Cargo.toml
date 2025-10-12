@@ -1,6 +1,6 @@
 [package]
 name = "init_player"
-version = "0.2.6"
+version = "0.1.10"
 description = "Created with Bolt"
 edition = "2021"
 
@@ -23,8 +23,7 @@ custom-panic = []
 [dependencies]
 bolt-lang.workspace = true
 serde = { version = "1.0", features = ["derive"] }
-rand = "0.9.2"
-player = { path = "../../components/player" }
-health = { path = "../../components/health" }
-weapon = { path = "../../components/weapon" }
-player_stats = { path = "../../components/player_stats" }
+player = { version = "0.1.10", path = "../../components/player", features = ["cpi"] }
+health = { version = "0.1.10", path = "../../components/health", features = ["cpi"] }
+weapon = { version = "0.1.10", path = "../../components/weapon", features = ["cpi"] }
+player_stats = { version = "0.1.10", path = "../../components/player_stats", features = ["cpi"] }

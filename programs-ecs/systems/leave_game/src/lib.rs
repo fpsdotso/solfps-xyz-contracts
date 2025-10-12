@@ -11,7 +11,7 @@ pub mod leave_game {
         let game = &mut ctx.accounts.game;
         let player = &mut ctx.accounts.player;
         
-        require!(player.is_logged_in, LeaveGameError::PlayerNotInGame);
+        require!(player.has_logged_in, LeaveGameError::PlayerNotInGame);
         
         if player.team == 1 {
             game.current_players_team_a = game.current_players_team_a.saturating_sub(1);
@@ -19,7 +19,7 @@ pub mod leave_game {
             game.current_players_team_b = game.current_players_team_b.saturating_sub(1);
         }
         
-        player.is_logged_in = false;
+        player.has_logged_in = false;
         player.is_alive = false;
         player.team = 0;
         player.lobby_id = None;
