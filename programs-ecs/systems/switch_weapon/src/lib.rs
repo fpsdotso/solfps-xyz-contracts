@@ -1,10 +1,10 @@
 use bolt_lang::*;
 use position::Position;
 
-declare_id!("5UiPWCCSbCWu5YdkFhe36MK5YL11yLhojrtT7mtGfP7j");
+declare_id!("FpY75Ly4uRawJUfmyKcLps9Z1Kytz6BvypwMyyHJWh6d");
 
 #[system]
-pub mod movement {
+pub mod switch_weapon {
 
     pub fn execute(ctx: Context<Components>, _args_p: Vec<u8>) -> Result<Components> {
         let position = &mut ctx.accounts.position;
@@ -19,7 +19,3 @@ pub mod movement {
     }
 
 }
-
-
-
-	

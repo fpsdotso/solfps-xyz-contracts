@@ -5,9 +5,25 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
+apply_damage = "GYpCrumupdHMPpke9fZf5Y66WfX2sYKs1xx22yRhYpoq"
+end_game = "9WgqyxzyiCZpDSPSMJ1ef59LD1yrL23N5Yauje6eha54"
+game = "3f5kd3wkJnmRAWu4jDBfWAh1Fu23wHFz9Fd8cAfr4Wdr"
+health = "8c4sj72LjKi9azxGadFLQ89fvQrgQd3eiP8KfDHa67Rv"
+init_game = "5ZhDRGff5T4dyvdiDF6Mg729VLQ2EVU4ecqY3ni3PQGo"
+init_lobby = "A5hTHQJ2tYCh2ssekZSRRQy87iuQuwzBu3exunuYaeG6"
+init_player = "DdfNp9wUnuuuTPN1uihkATQUNj9Hzxj6xuZQsBamfzr3"
+join_game = "H2ezdHmHvnoQc5T7RCTh8tEEfmvCaSHD7trSAMsVxBAv"
+leave_game = "8QczrLnLiJeQDk3QjhTyba3KNGXN2Z9fM2Kg2H3hD5RG"
 movement = "5UiPWCCSbCWu5YdkFhe36MK5YL11yLhojrtT7mtGfP7j"
+player = "hfbkKtwhWiTnCySqtkVwoti1AF7Xv3MYRdwxmXA1WeD"
+player_stats = "B7iPoS7bjHSFscsq8ao6vhWQCKbhDgPQJXiXsWifanD"
 position = "34idayqAQEUBFEQoshs4ZxUDMMaeoGwgGuNA2dN71xFH"
+respawn = "FVZKXQwmxnnKBhiyvBU9psjg3RdmGz87hotvGV18V2un"
 solfps_xyz_contracts = "2Z86V9gUcrMREK997BALjyKwo73MB34FAFiMfhKti5Da"
+start_game = "3DUusbymEx6PDZbeHtiZK9vKzGf8M3ePDG7vYegSKBH7"
+switch_weapon = "FpY75Ly4uRawJUfmyKcLps9Z1Kytz6BvypwMyyHJWh6d"
+update_game = "Da4AoBYJ3DH8uG4bVD73Ciitd6uC3P8gjDuVi9vBjpCP"
+weapon = "CBbM9mKimGEoMiKoY1bUiAjURTDcqC3k6qr1iXxLfSzk"
 
 [registry]
 url = "https://api.apr.dev"

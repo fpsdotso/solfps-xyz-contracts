@@ -223,6 +223,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a23eb6b1614318a8071c9b2521f36b424b2c83db5eb3a0fead4a6c0809af6e61"
 
 [[package]]
+name = "apply_damage"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
+
+[[package]]
 name = "ark-bn254"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -948,6 +956,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
 
 [[package]]
+name = "end_game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
+
+[[package]]
 name = "ephemeral-rollups-sdk"
 version = "0.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1000,6 +1016,13 @@ name = "find-msvc-tools"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "52051878f80a721bb68ebfbc930e07b65ba72f2da88968ea5c06fd6ca3d3a127"
+
+[[package]]
+name = "game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+]
 
 [[package]]
 name = "generic-array"
@@ -1075,6 +1098,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5419bdc4f6a9207fbeba6d11b604d481addf78ecd10c11ad51e76c2f6482748d"
 
 [[package]]
+name = "health"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+]
+
+[[package]]
 name = "heck"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1131,6 +1161,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "init_game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
+
+[[package]]
+name = "init_player"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
+
+[[package]]
 name = "itertools"
 version = "0.10.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1153,6 +1199,14 @@ checksum = "9afb3de4395d6b3e67a780b6de64b51c978ecf11cb9a462c66be7d4ca9039d33"
 dependencies = [
  "getrandom 0.3.3",
  "libc",
+]
+
+[[package]]
+name = "join_game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
 ]
 
 [[package]]
@@ -1179,6 +1233,14 @@ name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
+
+[[package]]
+name = "leave_game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
 
 [[package]]
 name = "libc"
@@ -1384,6 +1446,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "player"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+]
+
+[[package]]
+name = "player_stats"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+]
+
+[[package]]
 name = "position"
 version = "0.2.6"
 dependencies = [
@@ -1578,6 +1654,14 @@ name = "regex-syntax"
 version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "caf4aa5b0f434c91fe5c7f1ecb6a5ece2130b02ad2a590589dda5146df959001"
+
+[[package]]
+name = "respawn"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
 
 [[package]]
 name = "rustc-hash"
@@ -1855,10 +1939,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "start_game"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
+
+[[package]]
 name = "subtle"
 version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
+name = "switch_weapon"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
+ "serde",
+]
 
 [[package]]
 name = "syn"
@@ -2142,6 +2242,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bad67dc8b2a1a6e5448428adec4c3e84c43e561d8c9ee8a9e5aabeb193ec41d1"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "weapon"
+version = "0.2.6"
+dependencies = [
+ "bolt-lang",
 ]
 
 [[package]]
