@@ -1,12 +1,12 @@
 [package]
-name = "apply_damage"
+name = "reload"
 version = "0.1.10"
 description = "Created with Bolt"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "apply_damage"
+name = "reload"
 
 [features]
 no-entrypoint = []
@@ -24,8 +24,4 @@ custom-panic = []
 bolt-lang.workspace = true
 serde = { version = "1.0", features = ["derive"] }
 player = { version = "0.1.10", path = "../../components/player", features = ["cpi"] }
-health = { version = "0.1.10", path = "../../components/health", features = ["cpi"] }
 weapon = { version = "0.1.10", path = "../../components/weapon", features = ["cpi"] }
-player_stats = { version = "0.1.10", path = "../../components/player_stats", features = ["cpi"] }
-position = { version = "0.1.10", path = "../../components/position", features = ["cpi"] }
-game = { version = "0.1.10", path = "../../components/game", features = ["cpi"] }

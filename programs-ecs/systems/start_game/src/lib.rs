@@ -9,18 +9,19 @@ pub mod start_game {
 
     pub fn execute(ctx: Context<Components>, args: Vec<u8>) -> Result<Components> {
         let game = &mut ctx.accounts.game;
+        let player = &ctx.accounts.player;
         let clock = Clock::get()?;
         
         require!(game.game_state == 0, StartGameError::GameAlreadyStarted);
-        
-        let is_lobby_leader = if args.is_empty() { false } else { args[0] == 1 };
+
         let total_players = game.current_players_team_a + game.current_players_team_b;
-        
-        let can_start = is_lobby_leader || total_players >= 10;
-        require!(can_start, StartGameError::CannotStartGame);
-        
         require!(total_players >= 2, StartGameError::NotEnoughPlayers);
-        
+
+        let is_lobby_owner = player.key() == game.created_by;
+        let all_ready = game.ready_players >= total_players;
+
+        require!(is_lobby_owner || all_ready, StartGameError::CannotStartGame);
+
         game.game_state = 1;
         game.match_start_timestamp = clock.unix_timestamp;
         

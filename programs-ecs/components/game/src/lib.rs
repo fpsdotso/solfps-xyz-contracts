@@ -1,11 +1,9 @@
 use bolt_lang::*;
 
-declare_id!("GkWTKgPGiNhG5LFdXWCZdDrqFKfBvhVQ8D5cKpn1M3Y8");
+declare_id!("3f5kd3wkJnmRAWu4jDBfWAh1Fu23wHFz9Fd8cAfr4Wdr");
 
 #[component]
 pub struct Game {
-    pub match_id: Pubkey,           
-    pub lobby_id: Pubkey,            
     pub team_a_score: u32,           
     pub team_b_score: u32,           
     pub match_duration: u32,         
@@ -18,14 +16,20 @@ pub struct Game {
     pub winning_team: Option<u8>,   // Winning team (0=draw, 1=team_a, 2=team_b)
     pub match_type: u8,             // Match type (1=team_deathmatch) for now
     #[max_len(50)]
-    pub map_name: String,            
+    pub map_name: String,
+    
+    // NEW: Lobby features
+    #[max_len(32)]
+    pub lobby_name: String,
+    pub created_by: Pubkey,
+    pub is_private: bool,
+    pub ready_players: u8,
+    pub map_selection: u8,  // 0=default, 1=map1, 2=map2, etc.
 }
 
 impl Default for Game {
     fn default() -> Self {
         Self::new(GameInit{
-            match_id: Pubkey::default(),
-            lobby_id: Pubkey::default(),
             team_a_score: 0,
             team_b_score: 0,
             match_duration: 300, // 5 minutes a match
@@ -38,6 +42,11 @@ impl Default for Game {
             winning_team: None,
             match_type: 1, // Default to team deathmatch
             map_name: "New Arena".to_string(),
+            lobby_name: "New Game Room".to_string(),
+            created_by: Pubkey::default(),
+            is_private: false,
+            ready_players: 0,
+            map_selection: 0,
         }) 
     }
 }

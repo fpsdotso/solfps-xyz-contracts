@@ -12,6 +12,10 @@ pub mod leave_game {
         let player = &mut ctx.accounts.player;
         
         require!(player.has_logged_in, LeaveGameError::PlayerNotInGame);
+        require!(player.current_game.is_some(), LeaveGameError::PlayerNotInGame);
+        
+        // Verify player is in this specific game
+        require!(player.current_game.unwrap() == game.key(), LeaveGameError::PlayerNotInThisGame);
         
         if player.team == 1 {
             game.current_players_team_a = game.current_players_team_a.saturating_sub(1);
@@ -19,11 +23,9 @@ pub mod leave_game {
             game.current_players_team_b = game.current_players_team_b.saturating_sub(1);
         }
         
-        player.has_logged_in = false;
         player.is_alive = false;
         player.team = 0;
-        player.lobby_id = None;
-        player.match_id = None;
+        player.current_game = None;
         
         let total_players = game.current_players_team_a + game.current_players_team_b;
         if total_players == 0 && game.game_state == 1 {
@@ -46,4 +48,6 @@ pub mod leave_game {
 pub enum LeaveGameError {
     #[msg("Player is not currently in a game")]
     PlayerNotInGame,
+    #[msg("Player is not in this specific game")]
+    PlayerNotInThisGame,
 }

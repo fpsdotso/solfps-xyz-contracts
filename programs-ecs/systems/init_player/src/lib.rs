@@ -9,8 +9,9 @@ declare_id!("DdfNp9wUnuuuTPN1uihkATQUNj9Hzxj6xuZQsBamfzr3");
 #[system]
 pub mod init_player {
     pub fn execute(ctx: Context<Components>, args: Vec<u8>) -> Result<Components> {
-        let player = &mut ctx.accounts.player;
         let clock = Clock::get()?;
+        let player = &mut ctx.accounts.player;
+
         
         require!(!player.has_logged_in, InitPlayerError::AlreadyLoggedIn);
         
@@ -30,15 +31,14 @@ pub mod init_player {
         
         require!(username.len() >= 3 && username.len() <= 32, InitPlayerError::InvalidUsernameLength);
         
-        player.authority = Pubkey::new_unique();
+        player.authority = player.key();
         player.username = username;
         player.has_logged_in = true;
 
         // is_alive is true when player joins a game
         player.is_alive = false;
         player.team = 0;
-        player.lobby_id = None;
-        player.match_id = None;
+        player.current_game = None;
         player.last_login_timestamp = clock.unix_timestamp;
         player.total_matches_played = 0;
         player.level = 1;

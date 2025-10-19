@@ -15,8 +15,7 @@ pub mod respawn {
         let clock = Clock::get()?;
         
         require!(player.has_logged_in, RespawnError::PlayerNotLoggedIn);
-        require!(player.lobby_id.is_some(), RespawnError::PlayerNotInLobby);
-        require!(player.match_id.is_some(), RespawnError::PlayerNotInMatch);
+        require!(player.current_game.is_some(), RespawnError::PlayerNotInGame);
         require!(!player.is_alive, RespawnError::PlayerAlreadyAlive);
         
         if let Some(respawn_time) = health.respawn_timestamp {
@@ -64,10 +63,8 @@ pub mod respawn {
 pub enum RespawnError {
     #[msg("Player is not logged in")]
     PlayerNotLoggedIn,
-    #[msg("Player is not in a lobby")]
-    PlayerNotInLobby,
-    #[msg("Player is not in a match")]
-    PlayerNotInMatch,
+    #[msg("Player is not in a game")]
+    PlayerNotInGame,
     #[msg("Player is already alive")]
     PlayerAlreadyAlive,
     #[msg("Must wait 5 seconds before respawning")]

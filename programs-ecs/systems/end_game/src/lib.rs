@@ -5,7 +5,6 @@ declare_id!("9WgqyxzyiCZpDSPSMJ1ef59LD1yrL23N5Yauje6eha54");
 
 #[system]
 pub mod end_game {
-
     pub fn execute(ctx: Context<Components>, _args_p: Vec<u8>) -> Result<Components> {
         let game = &mut ctx.accounts.game;
         

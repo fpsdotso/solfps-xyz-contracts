@@ -4,8 +4,8 @@ declare_id!("8c4sj72LjKi9azxGadFLQ89fvQrgQd3eiP8KfDHa67Rv");
 
 #[component]
 pub struct Health {
-    pub current_hp: u32,             
     pub max_hp: u32,                 
+    pub current_hp: u32,             
     pub armor: u32,                  
     pub max_armor: u32,              
     pub is_alive: bool,              

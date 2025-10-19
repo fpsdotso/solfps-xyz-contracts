@@ -1,6 +1,5 @@
 use bolt_lang::*;
 use position::Position;
-use player::Player;
 
 declare_id!("5UiPWCCSbCWu5YdkFhe36MK5YL11yLhojrtT7mtGfP7j");
 
@@ -16,6 +15,7 @@ pub mod movement {
     pub fn execute(ctx: Context<Components>, args: Vec<u8>) -> Result<Components> {
         let player = &ctx.accounts.player;
         let position = &mut ctx.accounts.position;
+        // Authority validation is handled at the client/transaction level
         
         if player.is_alive == false {
             return Err(MovementError::PlayerNotAlive.into());
@@ -88,8 +88,8 @@ pub mod movement {
 
     #[system_input]
     pub struct Components {
-        pub position: Position,
         pub player: player::Player,
+        pub position: Position,
     }
 
 }

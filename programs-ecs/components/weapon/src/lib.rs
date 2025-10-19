@@ -13,8 +13,13 @@ pub struct Weapon {
     pub secondary_ammo_reserve: u32,  
     pub primary_damage: u32,          
     pub secondary_damage: u32,        
-    pub reload_time: u32,          
     pub can_switch_weapon: bool,
+    pub reload_time: u32,
+    
+    // NEW: Shooting mechanics
+    pub last_shot_timestamp: i64,
+    pub is_reloading: bool,
+    pub reload_start_timestamp: Option<i64>,
 }
 
 impl Default for Weapon {
@@ -31,6 +36,9 @@ impl Default for Weapon {
             secondary_damage: 50,
             reload_time: 2000,
             can_switch_weapon: true,
+            last_shot_timestamp: 0,
+            is_reloading: false,
+            reload_start_timestamp: None,
         }) 
     }
 }

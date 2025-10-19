@@ -2,7 +2,7 @@ use bolt_lang::*;
 
 declare_id!("34idayqAQEUBFEQoshs4ZxUDMMaeoGwgGuNA2dN71xFH");
 
-#[component]
+#[component(delegate)]
 pub struct Position {
     pub x: f64,                     
     pub y: f64,                     
@@ -12,8 +12,8 @@ pub struct Position {
     pub velocity_x: f32,             
     pub velocity_y: f32,              
     pub velocity_z: f32,              
-    pub is_moving: bool,              
     pub is_jumping: bool,            
+    pub is_moving: bool,              
     pub spawn_point_id: u8,          
 }
 

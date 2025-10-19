@@ -18,7 +18,10 @@ movement = "5UiPWCCSbCWu5YdkFhe36MK5YL11yLhojrtT7mtGfP7j"
 player = "hfbkKtwhWiTnCySqtkVwoti1AF7Xv3MYRdwxmXA1WeD"
 player_stats = "B7iPoS7bjHSFscsq8ao6vhWQCKbhDgPQJXiXsWifanD"
 position = "34idayqAQEUBFEQoshs4ZxUDMMaeoGwgGuNA2dN71xFH"
+reload = "8UWDB2GtMLKkF1Xx1a54x8MtbhzyTTX8RuoSXBG3xrsN"
 respawn = "FVZKXQwmxnnKBhiyvBU9psjg3RdmGz87hotvGV18V2un"
+set_ready = "ApjerCa4TNZHEPHheK8XSkVdsKdYqq6Yg6fMviECxSqx"
+shoot = "FDCpMdKzRvkgBnn6BERa9DtqUJY6Fxj3xjsRxFPkhJVh"
 solfps_xyz_contracts = "2Z86V9gUcrMREK997BALjyKwo73MB34FAFiMfhKti5Da"
 start_game = "3DUusbymEx6PDZbeHtiZK9vKzGf8M3ePDG7vYegSKBH7"
 switch_weapon = "FpY75Ly4uRawJUfmyKcLps9Z1Kytz6BvypwMyyHJWh6d"
@@ -49,7 +52,7 @@ program = "tests/fixtures/world.so"
 upgradeable = false
 
 [test.validator]
-bind_address = "0.0.0.0"
+bind_address = "127.0.0.1"
 url = "https://rpc.magicblock.app/devnet/"
 ledger = ".bolt/test-ledger"
 rpc_port = 8899
